@@ -1,0 +1,71 @@
+{
+  "name": "@imelevich/opossum-prometheus",
+  "version": "0.0.0",
+  "description": "",
+  "keywords": [],
+  "license": "ISC",
+  "author": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "pnpm run build:node",
+    "build:node": "tsc -p tsconfig.json",
+    "prepare": "husky install",
+    "test": "xo && c8 ava"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
+  },
+  "xo": {
+    "overrides": [
+      {
+        "files": [
+          "test/*.ts"
+        ],
+        "parserOptions": {
+          "project": "./tsconfig.test.json"
+        },
+        "rules": {
+          "ava/assertion-arguments": "off"
+        }
+      }
+    ],
+    "parserOptions": {
+      "project": "./tsconfig.json"
+    },
+    "prettier": true,
+    "rules": {
+      "import/extensions": "off"
+    }
+  },
+  "ava": {
+    "extensions": [
+      "ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ]
+  },
+  "devDependencies": {
+    "@types/node": "^18.15.11",
+    "@types/opossum": "^6.2.3",
+    "ava": "^5.2.0",
+    "c8": "^7.13.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.0",
+    "opossum": "^7.1.0",
+    "prettier": "^2.8.7",
+    "prettier-plugin-jsdoc": "^0.4.2",
+    "prettier-plugin-organize-imports": "^3.2.2",
+    "prettier-plugin-packagejson": "^2.4.3",
+    "prettier-plugin-sort-json": "^1.0.0",
+    "prom-client": "^14.2.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.2",
+    "webpack": "^5.77.0",
+    "xo": "^0.53.1"
+  },
+  "peerDependencies": {
+    "opossum": "7.x",
+    "prom-client": "14.x"
+  }
+}
