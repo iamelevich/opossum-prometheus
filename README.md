@@ -7,8 +7,9 @@ This library add [Prometheus](https://prometheus.io/) metrics to the [opossum](h
 
 - No direct dependencies, only peer dependencies on prom-client and opossum
 - Written in typescript
-- Have ability to add custom metrics
-- Have ability to blacklist events if you don't need them
+- Custom labels
+- Blacklist events if you don't need them
+- Customization of metric names and default labels
 
 ## ToC
 
