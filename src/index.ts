@@ -2,8 +2,15 @@ import type CircuitBreaker from 'opossum';
 import type PromClient from 'prom-client';
 import type { CircuitBreakerMetricsOptions } from './types';
 
-/** Circuit breaker metrics */
+export * from './types';
+
+/**
+ * Circuit breaker metrics
+ *
+ * @public
+ */
 export class CircuitBreakerMetrics {
+  /** Prometheus client */
   readonly client: typeof PromClient;
 
   private readonly registry: PromClient.Registry;
@@ -23,8 +30,8 @@ export class CircuitBreakerMetrics {
   /**
    * Constructor of CircuitBreakerMetrics
    *
-   * @param {ICircuitBreakerMetricsOptions} options - Options
-   * @returns {void}
+   * @param options - Options
+   * @returns
    */
   constructor(private readonly options: CircuitBreakerMetricsOptions) {
     if (!options.enabled) {
@@ -64,8 +71,8 @@ export class CircuitBreakerMetrics {
   /**
    * Start collecting metrics for circuit breaker
    *
-   * @param {CircuitBreaker} circuitBreaker - Circuit breaker instance
-   * @returns {void}
+   * @param circuitBreaker - Circuit breaker instance
+   * @returns
    */
   add(circuitBreaker: CircuitBreaker): void {
     if (!this.options.enabled) {

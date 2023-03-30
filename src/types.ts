@@ -1,8 +1,12 @@
 import type CircuitBreaker from 'opossum';
 import type PromClient from 'prom-client';
 
-/** Circuit breaker metrics options */
-export type CircuitBreakerMetricsOptions = {
+/**
+ * Circuit breaker metrics options
+ *
+ * @public
+ */
+export interface CircuitBreakerMetricsOptions {
   /** If disabled - will not collect metrics */
   enabled?: boolean;
 
@@ -22,7 +26,7 @@ export type CircuitBreakerMetricsOptions = {
   /**
    * Prometheus registry
    *
-   * @default client
+   * @defaultValue `client.register`
    */
   registry?: PromClient.Registry;
 
@@ -38,8 +42,6 @@ export type CircuitBreakerMetricsOptions = {
    * ```
    *
    * Will create metrics with name `my_service_circuit_breaker_counter`
-   *
-   * @default ''
    */
   prefix?: string;
 
@@ -62,4 +64,4 @@ export type CircuitBreakerMetricsOptions = {
 
   /** List of circuit breakers to collect metrics for */
   circuitBreakers?: CircuitBreaker[];
-};
+}
