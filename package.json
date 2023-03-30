@@ -1,5 +1,5 @@
 {
-  "name": "@imelevich/opossum-prometheus",
+  "name": "@iamelevich/opossum-prometheus",
   "version": "0.0.0",
   "description": "",
   "keywords": [],
@@ -9,6 +9,7 @@
   "scripts": {
     "build": "pnpm run build:node",
     "build:node": "tsc -p tsconfig.json",
+    "docs": "pnpm run build && api-extractor run -l && api-documenter markdown -i ./temp -o ./docs",
     "prepare": "husky install",
     "test": "xo && c8 ava"
   },
@@ -34,7 +35,8 @@
     },
     "prettier": true,
     "rules": {
-      "import/extensions": "off"
+      "import/extensions": "off",
+      "@typescript-eslint/consistent-type-definitions": "interface"
     }
   },
   "ava": {
@@ -46,6 +48,8 @@
     ]
   },
   "devDependencies": {
+    "@microsoft/api-documenter": "^7.21.6",
+    "@microsoft/api-extractor": "^7.34.4",
     "@types/node": "^18.15.11",
     "@types/opossum": "^6.2.3",
     "ava": "^5.2.0",
