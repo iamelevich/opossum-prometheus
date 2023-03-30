@@ -1,13 +1,39 @@
+/**
+ * A library that adds metrics to the `opossum` circuit breaker
+ *
+ * @packageDocumentation
+ */
+
 import type CircuitBreaker from 'opossum';
 import type PromClient from 'prom-client';
 import type { CircuitBreakerMetricsOptions } from './types';
 
-export * from './types';
-
 /**
  * Circuit breaker metrics
  *
+ * @example
+ *
+ * ```ts
+ * import { CircuitBreakerMetrics } from '@iamelevich/opossum-prometheus';
+ * import CircuitBreaker from 'opossum';
+ * import promClient from 'prom-client';
+ *
+ * const myCircuitBreaker = new CircuitBreaker(async () => 'my-data', {
+ *   name: 'my-circuit-breaker',
+ * });
+ *
+ * const myCircuitBreakerMetrics = new CircuitBreakerMetrics({
+ *   enabled: true,
+ *   client: promClient,
+ *   registry: promClient.register,
+ *   circuitBreakers: [myCircuitBreaker],
+ * });
+ * await myCircuitBreaker.fire();
+ * console.log(await myCircuitBreakerMetrics.metrics);
+ * ```
+ *
  * @public
+ * @see {@link CircuitBreakerMetricsOptions} for configuration options
  */
 export class CircuitBreakerMetrics {
   /** Prometheus client */
@@ -158,3 +184,5 @@ export class CircuitBreakerMetrics {
     this.registry.clear();
   }
 }
+
+export * from './types';

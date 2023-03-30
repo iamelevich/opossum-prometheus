@@ -94,7 +94,11 @@ export interface CircuitBreakerMetricsOptionsOverrides {
  * @public
  */
 export interface CircuitBreakerMetricsOptionsOverridesMetric {
-  /** Metric name override */
+  /**
+   * Metric name override
+   *
+   * @defaultValue `circuit_breaker_counter` for counter or `circuit_breaker_performance` for summary
+   */
   name?: string;
 
   /** Metric default labels overrides */

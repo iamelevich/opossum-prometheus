@@ -83,20 +83,23 @@ console.log(await myCircuitBreakerMetrics.metrics);
 
 ```
 
+<sub>[Back to top](#toc)</sub>
+
 ## Docs
 
-Full documentation you can find in [doc folder](./doc)
+Full documentation you can find in [doc folder](./doc/opossum-prometheus.md)
 
 Options:
 | Property | Modifiers | Type | Description |
-| ---------------------------------------------------------------------------------------- | --------- | ---------------------------- | ------------------------------------------------------------- |
-| [circuitBreakers?](./opossum-prometheus.circuitbreakermetricsoptions.circuitbreakers.md) | | CircuitBreaker\[\] | _(Optional)_ List of circuit breakers to collect metrics for |
-| [client](./opossum-prometheus.circuitbreakermetricsoptions.client.md) | | typeof PromClient | Prometheus client |
-| [customLabels?](./opossum-prometheus.circuitbreakermetricsoptions.customlabels.md) | | Record&lt;string, string&gt; | _(Optional)_ Custom labels |
-| [enabled?](./opossum-prometheus.circuitbreakermetricsoptions.enabled.md) | | boolean | _(Optional)_ If disabled - will not collect metrics |
-| [eventsBlacklist?](./opossum-prometheus.circuitbreakermetricsoptions.eventsblacklist.md) | | string\[\] | _(Optional)_ List of opossum circuit breaker events to ignore |
-| [prefix?](./opossum-prometheus.circuitbreakermetricsoptions.prefix.md) | | string | _(Optional)_ Prefix for metrics |
-| [registry?](./opossum-prometheus.circuitbreakermetricsoptions.registry.md) | | PromClient.Registry | _(Optional)_ Prometheus registry |
+| -------------------------------------------------------------------------------------------- | --------- | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------- |
+| [circuitBreakers?](./doc/opossum-prometheus.circuitbreakermetricsoptions.circuitbreakers.md) | | CircuitBreaker\[\] | _(Optional)_ List of circuit breakers to collect metrics for |
+| [client](./doc/opossum-prometheus.circuitbreakermetricsoptions.client.md) | | typeof PromClient | Prometheus client |
+| [customLabels?](./doc/opossum-prometheus.circuitbreakermetricsoptions.customlabels.md) | | Record&lt;string, string&gt; | _(Optional)_ Custom labels |
+| [enabled?](./doc/opossum-prometheus.circuitbreakermetricsoptions.enabled.md) | | boolean | _(Optional)_ If disabled - will not collect metrics |
+| [eventsBlacklist?](./doc/opossum-prometheus.circuitbreakermetricsoptions.eventsblacklist.md) | | string\[\] | _(Optional)_ List of opossum circuit breaker events to ignore |
+| [overrides?](./doc/opossum-prometheus.circuitbreakermetricsoptions.overrides.md) | | [CircuitBreakerMetricsOptionsOverrides](./opossum-prometheus.circuitbreakermetricsoptionsoverrides.md) | <p>_(Optional)_ Overrides for metrics. Let you change metric name and default labels</p><p> 1.1.0</p> |
+| [prefix?](./doc/opossum-prometheus.circuitbreakermetricsoptions.prefix.md) | | string | _(Optional)_ Prefix for metrics. Will be added to the beginning of metric name if no <code>override</code> provided |
+| [registry?](./doc/opossum-prometheus.circuitbreakermetricsoptions.registry.md) | | PromClient.Registry | _(Optional)_ Prometheus registry |
 
 <sub>[Back to top](#toc)</sub>
 
