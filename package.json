@@ -29,7 +29,8 @@
     "build": "pnpm run build:node",
     "build:node": "tsc -p tsconfig.json",
     "docs": "pnpm run build && api-extractor run -l && api-documenter markdown -i ./temp -o ./docs",
-    "lint": "xo --fix",
+    "lint": "xo",
+    "lint:fix": "xo --fix",
     "prepare": "husky install",
     "test": "c8 ava",
     "test:coverage": "c8 -r text -r json-summary ava"
