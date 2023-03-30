@@ -18,6 +18,23 @@ export class CircuitBreakerMetrics {
   private readonly counter: PromClient.Counter;
   private readonly summary: PromClient.Summary;
 
+  private readonly metricConfig = {
+    counter: {
+      name: 'circuit_breaker_counter',
+      labels: {
+        name: 'name',
+        event: 'event',
+      },
+    },
+    summary: {
+      name: 'circuit_breaker_performance',
+      labels: {
+        name: 'name',
+        event: 'event',
+      },
+    },
+  };
+
   /** Returns all metrics */
   get metrics(): Promise<string> {
     if (!this.options.enabled) {
@@ -38,27 +55,48 @@ export class CircuitBreakerMetrics {
       return;
     }
 
+    this.metricConfig = {
+      counter: {
+        name:
+          options.overrides?.counter?.name ??
+          `${this.options.prefix ?? ''}${this.metricConfig.counter.name}`,
+        labels: {
+          ...this.metricConfig.counter.labels,
+          ...options.overrides?.counter?.labels,
+        },
+      },
+      summary: {
+        name:
+          options.overrides?.summary?.name ??
+          `${this.options.prefix ?? ''}${this.metricConfig.summary.name}`,
+        labels: {
+          ...this.metricConfig.summary.labels,
+          ...options.overrides?.summary?.labels,
+        },
+      },
+    };
+
     this.client = options.client;
     this.registry = options.registry ?? this.client.register;
 
     this.counter = new this.client.Counter({
-      name: `${this.options.prefix ?? ''}circuit_breaker_counter`,
+      name: this.metricConfig.counter.name,
       help: 'Circuit breaker counter',
       registers: [this.registry],
       labelNames: [
-        'name',
-        'event',
+        this.metricConfig.counter.labels.name,
+        this.metricConfig.counter.labels.event,
         ...Object.keys(this.options.customLabels ?? {}),
       ],
     });
 
     this.summary = new this.client.Summary({
-      name: `${this.options.prefix ?? ''}circuit_breaker_performance`,
+      name: this.metricConfig.summary.name,
       help: 'Circuit breaker performance summary',
       registers: [this.registry],
       labelNames: [
-        'name',
-        'event',
+        this.metricConfig.summary.labels.name,
+        this.metricConfig.summary.labels.event,
         ...Object.keys(this.options.customLabels ?? {}),
       ],
     });
@@ -89,8 +127,8 @@ export class CircuitBreakerMetrics {
 
       circuitBreaker.on(eventName as any, (_: any, latencyMs?: number) => {
         this.counter.inc({
-          name: circuitBreaker.name,
-          event: eventName.toString(),
+          [this.metricConfig.counter.labels.name]: circuitBreaker.name,
+          [this.metricConfig.counter.labels.event]: eventName.toString(),
           ...this.options.customLabels,
         });
 

@@ -31,7 +31,8 @@ export interface CircuitBreakerMetricsOptions {
   registry?: PromClient.Registry;
 
   /**
-   * Prefix for metrics
+   * Prefix for metrics. Will be added to the beginning of metric name if no
+   * `override` provided
    *
    * @example
    *
@@ -41,7 +42,8 @@ export interface CircuitBreakerMetricsOptions {
    * }
    * ```
    *
-   * Will create metrics with name `my_service_circuit_breaker_counter`
+   * Will create metrics with name `my_service_circuit_breaker_counter` and
+   * `my_service_circuit_breaker_performance`
    */
   prefix?: string;
 
@@ -64,4 +66,58 @@ export interface CircuitBreakerMetricsOptions {
 
   /** List of circuit breakers to collect metrics for */
   circuitBreakers?: CircuitBreaker[];
+
+  /**
+   * Overrides for metrics. Let you change metric name and default labels
+   *
+   * @since 1.1.0
+   */
+  overrides?: CircuitBreakerMetricsOptionsOverrides;
+}
+
+/**
+ * Circuit breaker metrics options overrides
+ *
+ * @public
+ */
+export interface CircuitBreakerMetricsOptionsOverrides {
+  /** Overrides for counter metric */
+  counter?: CircuitBreakerMetricsOptionsOverridesMetric;
+
+  /** Overrides for summary metric */
+  summary?: CircuitBreakerMetricsOptionsOverridesMetric;
+}
+
+/**
+ * Circuit breaker metrics options overrides metric
+ *
+ * @public
+ */
+export interface CircuitBreakerMetricsOptionsOverridesMetric {
+  /** Metric name override */
+  name?: string;
+
+  /** Metric default labels overrides */
+  labels?: CircuitBreakerMetricsOptionsOverridesMetricLabels;
+}
+
+/**
+ * Circuit breaker metrics options overrides metric labels
+ *
+ * @public
+ */
+export interface CircuitBreakerMetricsOptionsOverridesMetricLabels {
+  /**
+   * Name label override
+   *
+   * @defaultValue `name`
+   */
+  name?: string;
+
+  /**
+   * Event label override
+   *
+   * @defaultValue `event`
+   */
+  event?: string;
 }
