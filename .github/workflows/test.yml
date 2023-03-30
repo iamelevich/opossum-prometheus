@@ -86,6 +86,7 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: 'Update badges [skip ci]'
+          branch: gh-pages
           skip_fetch: true
           skip_checkout: true
 
