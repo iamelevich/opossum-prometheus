@@ -57,6 +57,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: code-coverage-report-18
+          path: coverage
 
       - name: Update Coverage Badge
         uses: we-cli/coverage-badge-action@main
