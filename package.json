@@ -1,15 +1,35 @@
 {
   "name": "@iamelevich/opossum-prometheus",
-  "version": "0.0.0",
-  "description": "",
-  "keywords": [],
-  "license": "ISC",
-  "author": "",
+  "version": "0.0.1",
+  "description": "Prometheus metrics for opossum circuit breaker",
+  "keywords": [
+    "opossum",
+    "metrics",
+    "prometheus"
+  ],
+  "homepage": "https://github.com/iamelevich/opossum-prometheus/blob/master/README.md",
+  "bugs": {
+    "url": "https://github.com/iamelevich/opossum-prometheus/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iamelevich/opossum-prometheus.git"
+  },
+  "license": "MIT",
+  "author": "Ilya Amelevich <ilya.amelevich@gmail.com>",
   "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "directories": {
+    "lib": "src",
+    "doc": "docs",
+    "test": "test"
+  },
   "scripts": {
     "build": "pnpm run build:node",
     "build:node": "tsc -p tsconfig.json",
     "docs": "pnpm run build && api-extractor run -l && api-documenter markdown -i ./temp -o ./docs",
+    "lint": "xo --fix",
     "prepare": "husky install",
     "test": "xo && c8 ava"
   },
@@ -36,7 +56,10 @@
     "prettier": true,
     "rules": {
       "import/extensions": "off",
-      "@typescript-eslint/consistent-type-definitions": "interface"
+      "@typescript-eslint/consistent-type-definitions": [
+        "error",
+        "interface"
+      ]
     }
   },
   "ava": {
