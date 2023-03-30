@@ -35,6 +35,8 @@
     "build:node": "tsc -p tsconfig.json",
     "docs": "pnpm run build && api-extractor run -l && api-documenter markdown -i ./temp -o ./docs",
     "example": "ts-node --project ./tsconfig.example.json ./examples/example.ts",
+    "example:custom-labels": "ts-node --project ./tsconfig.example.json ./examples/custom-labels.ts",
+    "example:overrides": "ts-node --project ./tsconfig.example.json ./examples/overrides.ts",
     "lint": "xo",
     "lint:fix": "xo --fix",
     "prepare": "husky install",

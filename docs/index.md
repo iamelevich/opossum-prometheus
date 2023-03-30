@@ -6,6 +6,6 @@
 
 ## Packages
 
-| Package                                                  | Description |
-| -------------------------------------------------------- | ----------- |
-| [@imelevich/opossum-prometheus](./opossum-prometheus.md) |             |
+| Package                                                   | Description                                                             |
+| --------------------------------------------------------- | ----------------------------------------------------------------------- |
+| [@iamelevich/opossum-prometheus](./opossum-prometheus.md) | A library that adds metrics to the <code>opossum</code> circuit breaker |

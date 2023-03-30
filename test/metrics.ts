@@ -263,3 +263,50 @@ test('collect metrics with more than one circuit breaker', async (t) => {
 
   t.is(await metrics.metrics, '\n');
 });
+
+test('collect metrics with overrides', async (t) => {
+  const testCircuitBreaker = new CircuitBreaker(async () => 'test', {
+    name: 'test',
+  });
+
+  const metrics = circuitBreakerMetricsFactory({
+    enabled: true,
+    circuitBreakers: [testCircuitBreaker],
+    overrides: {
+      counter: {
+        name: 'test_circuit_breaker_counter',
+        labels: {
+          name: 'test_counter_name',
+          event: 'test_counter_event',
+        },
+      },
+      summary: {
+        name: 'test_circuit_breaker_performance',
+        labels: {
+          name: 'test_summary_name',
+          event: 'test_summary_event',
+        },
+      },
+    },
+  });
+
+  await testCircuitBreaker.fire();
+  await testCircuitBreaker.fire();
+
+  const resultMetricsText = await metrics.metrics;
+
+  t.not(resultMetricsText, '');
+
+  t.regex(
+    resultMetricsText,
+    /test_circuit_breaker_counter{test_counter_name="test",test_counter_event="fire"} 2/
+  );
+  t.regex(
+    resultMetricsText,
+    /test_circuit_breaker_counter{test_counter_name="test",test_counter_event="success"} 2/
+  );
+  t.regex(
+    resultMetricsText,
+    /test_circuit_breaker_performance_count{test_summary_name="test",test_summary_event="success"} 2/
+  );
+});
