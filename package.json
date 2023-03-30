@@ -1,6 +1,6 @@
 {
   "name": "@iamelevich/opossum-prometheus",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Prometheus metrics for opossum circuit breaker",
   "keywords": [
     "opossum",
@@ -23,12 +23,17 @@
   "directories": {
     "lib": "src",
     "doc": "docs",
+    "example": "examples",
     "test": "test"
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "pnpm run build:node",
     "build:node": "tsc -p tsconfig.json",
     "docs": "pnpm run build && api-extractor run -l && api-documenter markdown -i ./temp -o ./docs",
+    "example": "ts-node --project ./tsconfig.example.json ./examples/example.ts",
     "lint": "xo",
     "lint:fix": "xo --fix",
     "prepare": "husky install",
@@ -61,7 +66,8 @@
       "@typescript-eslint/consistent-type-definitions": [
         "error",
         "interface"
-      ]
+      ],
+      "unicorn/prefer-top-level-await": "off"
     }
   },
   "ava": {
