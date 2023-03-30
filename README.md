@@ -14,9 +14,30 @@ This library add [Prometheus](https://prometheus.io/) metrics to the [opossum](h
 
 - [opossum-prometheus](#opossum-prometheus)
   - [ToC](#toc)
+  - [Install](#install)
   - [Usage](#usage)
   - [Docs](#docs)
   - [License](#license)
+
+## Install
+
+With NPM:
+
+```sh
+npm i -s @iamelevich/opossum-prometheus
+```
+
+With Yarn:
+
+```sh
+yarn add @iamelevich/opossum-prometheus
+```
+
+With PNPM:
+
+```sh
+pnpm add @iamelevich/opossum-prometheus
+```
 
 ## Usage
 
