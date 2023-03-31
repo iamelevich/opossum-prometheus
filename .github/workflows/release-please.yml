@@ -12,8 +12,67 @@ name: release-please
 jobs:
   release-please:
     runs-on: ubuntu-latest
+    outputs:
+      releases_created: ${{ steps.release.outputs.releases_created }}
     steps:
       - uses: google-github-actions/release-please-action@v3
+        id: release
         with:
           release-type: node
           package-name: release-please-action
+
+  publish-github-pkg:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    needs: release-please
+    if: needs.release-please.outputs.releases_created
+    steps:
+      - uses: actions/checkout@v3
+      # Setup .npmrc file to publish to GitHub Packages
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          registry-url: 'https://npm.pkg.github.com'
+          # Defaults to the user or organization that owns the workflow file
+          scope: '@iamelevich'
+
+      - name: Install deps
+        uses: ./.github/actions/setup-with-deps-action
+        with:
+          node-version: 18
+
+      - name: Build project
+        run: pnpm build
+
+      - run: pnpm publish --no-git-checks
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  publish-npm:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    needs: release-please
+    if: needs.release-please.outputs.releases_created
+    steps:
+      - uses: actions/checkout@v3
+      # Setup .npmrc file to publish to GitHub Packages
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Install deps
+        uses: ./.github/actions/setup-with-deps-action
+        with:
+          node-version: 18
+
+      - name: Build project
+        run: pnpm build
+
+      - run: pnpm publish --no-git-checks --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
