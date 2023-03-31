@@ -15,18 +15,33 @@ const circuitBreakerMetricsFactory = (
   });
 };
 
-test('instance created when is enabled', (t) => {
+test('enabled by default', async (t) => {
+  const metrics = circuitBreakerMetricsFactory({});
+  t.is(metrics instanceof CircuitBreakerMetrics, true);
+
+  const resultMetricsText = await metrics.metrics;
+  t.regex(resultMetricsText, /circuit_breaker_counter/);
+  t.regex(resultMetricsText, /circuit_breaker_performance/);
+});
+
+test('instance created when is enabled and metrics were created', async (t) => {
   const metrics = circuitBreakerMetricsFactory({
     enabled: true,
   });
   t.is(metrics instanceof CircuitBreakerMetrics, true);
+
+  const resultMetricsText = await metrics.metrics;
+  t.regex(resultMetricsText, /circuit_breaker_counter/);
+  t.regex(resultMetricsText, /circuit_breaker_performance/);
 });
 
-test('instance created when disabled', (t) => {
+test('instance created when disabled and no metrics were created', async (t) => {
   const metrics = circuitBreakerMetricsFactory({
     enabled: false,
   });
   t.is(metrics instanceof CircuitBreakerMetrics, true);
+
+  t.is(await metrics.metrics, '');
 });
 
 test('not fail on method calls when disabled', async (t) => {
@@ -309,4 +324,33 @@ test('collect metrics with overrides', async (t) => {
     resultMetricsText,
     /test_circuit_breaker_performance_count{test_summary_name="test",test_summary_event="success"} 2/
   );
+});
+
+test('not collect performance metrics with exposePerformanceMetrics = false', async (t) => {
+  const testCircuitBreaker = new CircuitBreaker(async () => 'test', {
+    name: 'test',
+  });
+
+  const metrics = circuitBreakerMetricsFactory({
+    enabled: true,
+    circuitBreakers: [testCircuitBreaker],
+    exposePerformanceMetrics: false,
+  });
+
+  await testCircuitBreaker.fire();
+  await testCircuitBreaker.fire();
+
+  const resultMetricsText = await metrics.metrics;
+
+  t.not(resultMetricsText, '');
+
+  t.regex(
+    resultMetricsText,
+    /circuit_breaker_counter{name="test",event="fire"} 2/
+  );
+  t.regex(
+    resultMetricsText,
+    /circuit_breaker_counter{name="test",event="success"} 2/
+  );
+  t.notRegex(resultMetricsText, /circuit_breaker_performance/);
 });

@@ -7,7 +7,11 @@ import type PromClient from 'prom-client';
  * @public
  */
 export interface CircuitBreakerMetricsOptions {
-  /** If disabled - will not collect metrics */
+  /**
+   * If disabled - will not collect metrics
+   *
+   * @defaultValue `true`
+   */
   enabled?: boolean;
 
   /**
@@ -67,12 +71,16 @@ export interface CircuitBreakerMetricsOptions {
   /** List of circuit breakers to collect metrics for */
   circuitBreakers?: CircuitBreaker[];
 
-  /**
-   * Overrides for metrics. Let you change metric name and default labels
-   *
-   * @since 1.1.0
-   */
+  /** Overrides for metrics. Let you change metric name and default labels */
   overrides?: CircuitBreakerMetricsOptionsOverrides;
+
+  /**
+   * Expose performance metrics `circuit_breaker_performance` for events
+   * `success` and `failure`
+   *
+   * @defaultValue `true`
+   */
+  exposePerformanceMetrics?: boolean;
 }
 
 /**
