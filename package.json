@@ -47,6 +47,9 @@
     "**/*": "prettier --write --ignore-unknown"
   },
   "xo": {
+    "ignores": [
+      "commitlint.config.js"
+    ],
     "overrides": [
       {
         "files": [
