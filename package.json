@@ -47,6 +47,9 @@
     "**/*": "prettier --write --ignore-unknown"
   },
   "xo": {
+    "ignores": [
+      "commitlint.config.js"
+    ],
     "overrides": [
       {
         "files": [
@@ -82,6 +85,8 @@
     ]
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.5.1",
+    "@commitlint/config-conventional": "^17.4.4",
     "@microsoft/api-documenter": "^7.21.6",
     "@microsoft/api-extractor": "^7.34.4",
     "@types/node": "^18.15.11",
