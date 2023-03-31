@@ -40,78 +40,50 @@ jobs:
         run: pnpm install
 
       - name: Test and Coverage
-        run: pnpm run test:coverage
+        run: pnpm run test
 
-      - name: Archive code coverage results
-        uses: actions/upload-artifact@v3
-        with:
-          name: code-coverage-report-${{ matrix.version }}
-          path: ./coverage/coverage-summary.json
-
-  coverage_badge:
+  coverage:
     runs-on: ubuntu-latest
     needs: test
-    name: Coverage badge
-    permissions:
-      # Give the default GITHUB_TOKEN write permission to commit and push the
-      # added or changed files to the repository.
-      contents: write
+    name: Coverage
     steps:
-      - name: Download code coverage results
-        uses: actions/download-artifact@v3
-        with:
-          name: code-coverage-report-18
+      - name: Checkout
+        uses: actions/checkout@v3
 
-      - name: Get Values
-        id: get-values
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - uses: pnpm/action-setup@v2
+        name: Install pnpm
+        id: pnpm-install
+        with:
+          version: 7
+          run_install: false
+
+      - name: Get pnpm store directory
+        id: pnpm-cache
         shell: bash
         run: |
-          COV=$(node -p 't=require(`./coverage-summary.json`).total,Math.min(...`lines|statements|functions|branches`.split(`|`).map(k=>t[k].pct))')
-          echo "coverage=$COV" >> $GITHUB_OUTPUT
+          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
 
-      - name: Checkout gh-pages
-        uses: actions/checkout@v3
+      - uses: actions/cache@v3
+        name: Setup pnpm cache
         with:
-          ref: gh-pages
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-18-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-18-pnpm-store-
 
-      - name: Create Badges
-        shell: bash
-        run: |
-          export COV=${{ steps.get-values.outputs.coverage }}
-          COLOR=$(node -p '+process.env.COV >= 95 ? `green` : `orange`')
-          mkdir -p badges
-          npx badgen-cli -j coverage -s $COV% -c $COLOR > badges/coverage.svg
+      - name: Install dependencies
+        run: pnpm install
 
-      - name: Deploy Badges
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: 'Update badges [skip ci]'
-          branch: gh-pages
-          skip_fetch: true
-          skip_checkout: true
-
-      # Without this, will get Error:
-      # Can't find 'action.yml', 'action.yaml' or 'Dockerfile' under '/home/runner/work/coverage-badge-action/coverage-badge-action/action.yml'.
-      # Did you forget to run actions/checkout before running your local action?
-      - name: Checkout Back
-        uses: actions/checkout@v3
-        with:
-          ref: ${{ github.ref }}
-
-  codecov:
-    runs-on: ubuntu-latest
-    needs: test
-    name: Upload to codecov.io
-    steps:
-      - name: Download code coverage results
-        uses: actions/download-artifact@v3
-        with:
-          name: code-coverage-report-18
+      - name: Lint
+        run: pnpm test:coverage
 
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v3
-        with:
-          files: coverage-summary.json
 
   lint:
     runs-on: ubuntu-latest
