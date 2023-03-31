@@ -41,7 +41,7 @@
     "lint:fix": "xo --fix",
     "prepare": "husky install",
     "test": "c8 ava",
-    "test:coverage": "c8 -r text -r json-summary ava"
+    "test:coverage": "c8 -r text -r json-summary -r lcov ava"
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
