@@ -6,8 +6,6 @@
 
 Overrides for metrics. Let you change metric name and default labels
 
-1.1.0
-
 **Signature:**
 
 ```typescript
