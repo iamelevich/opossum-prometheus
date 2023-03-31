@@ -15,18 +15,24 @@ const circuitBreakerMetricsFactory = (
   });
 };
 
-test('instance created when is enabled', (t) => {
+test('instance created when is enabled and metrics were created', async (t) => {
   const metrics = circuitBreakerMetricsFactory({
     enabled: true,
   });
   t.is(metrics instanceof CircuitBreakerMetrics, true);
+
+  const resultMetricsText = await metrics.metrics;
+  t.regex(resultMetricsText, /circuit_breaker_counter/);
+  t.regex(resultMetricsText, /circuit_breaker_performance/);
 });
 
-test('instance created when disabled', (t) => {
+test('instance created when disabled and no metrics were created', async (t) => {
   const metrics = circuitBreakerMetricsFactory({
     enabled: false,
   });
   t.is(metrics instanceof CircuitBreakerMetrics, true);
+
+  t.is(await metrics.metrics, '');
 });
 
 test('not fail on method calls when disabled', async (t) => {
