@@ -73,6 +73,14 @@ export interface CircuitBreakerMetricsOptions {
 
   /** Overrides for metrics. Let you change metric name and default labels */
   overrides?: CircuitBreakerMetricsOptionsOverrides;
+
+  /**
+   * Expose performance metrics `circuit_breaker_performance` for events
+   * `success` and `failure`
+   *
+   * @defaultValue `true`
+   */
+  exposePerformanceMetrics?: boolean;
 }
 
 /**

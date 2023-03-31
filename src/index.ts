@@ -43,7 +43,7 @@ export class CircuitBreakerMetrics {
   private readonly options: CircuitBreakerMetricsOptions;
 
   private readonly counter: PromClient.Counter;
-  private readonly summary: PromClient.Summary;
+  private readonly summary?: PromClient.Summary;
 
   private readonly metricConfig = {
     counter: {
@@ -80,6 +80,7 @@ export class CircuitBreakerMetrics {
   constructor(options: CircuitBreakerMetricsOptions) {
     this.options = {
       enabled: true,
+      exposePerformanceMetrics: true,
       ...options,
     };
 
@@ -122,16 +123,18 @@ export class CircuitBreakerMetrics {
       ],
     });
 
-    this.summary = new this.client.Summary({
-      name: this.metricConfig.summary.name,
-      help: 'Circuit breaker performance summary',
-      registers: [this.registry],
-      labelNames: [
-        this.metricConfig.summary.labels.name,
-        this.metricConfig.summary.labels.event,
-        ...Object.keys(this.options.customLabels ?? {}),
-      ],
-    });
+    if (this.options.exposePerformanceMetrics) {
+      this.summary = new this.client.Summary({
+        name: this.metricConfig.summary.name,
+        help: 'Circuit breaker performance summary',
+        registers: [this.registry],
+        labelNames: [
+          this.metricConfig.summary.labels.name,
+          this.metricConfig.summary.labels.event,
+          ...Object.keys(this.options.customLabels ?? {}),
+        ],
+      });
+    }
 
     for (const circuitBreaker of this.options.circuitBreakers ?? []) {
       this.add(circuitBreaker);
@@ -163,7 +166,10 @@ export class CircuitBreakerMetrics {
           ...this.options.customLabels,
         });
 
+        // Collect performance metrics only if enabled
         if (
+          this.options.exposePerformanceMetrics &&
+          this.summary &&
           (eventName === 'success' || eventName === 'failure') &&
           latencyMs !== undefined
         ) {
