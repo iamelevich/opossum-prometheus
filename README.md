@@ -94,15 +94,16 @@ Full documentation you can find in [docs folder](./docs/opossum-prometheus.md)
 
 Options:
 | Property | Type | Description |
-| --------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------- |
+| ---------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------- |
 | [circuitBreakers?](./docs/opossum-prometheus.circuitbreakermetricsoptions.circuitbreakers.md) | CircuitBreaker\[\] | _(Optional)_ List of circuit breakers to collect metrics for |
 | [client](./docs/opossum-prometheus.circuitbreakermetricsoptions.client.md) | typeof PromClient | Prometheus client |
 | [customLabels?](./docs/opossum-prometheus.circuitbreakermetricsoptions.customlabels.md) | Record&lt;string, string&gt; | _(Optional)_ Custom labels |
 | [enabled?](./docs/opossum-prometheus.circuitbreakermetricsoptions.enabled.md) | boolean | _(Optional)_ If disabled - will not collect metrics |
 | [eventsBlacklist?](./docs/opossum-prometheus.circuitbreakermetricsoptions.eventsblacklist.md) | string\[\] | _(Optional)_ List of opossum circuit breaker events to ignore |
-| [overrides?](./docs/opossum-prometheus.circuitbreakermetricsoptions.overrides.md) | [CircuitBreakerMetricsOptionsOverrides](./opossum-prometheus.circuitbreakermetricsoptionsoverrides.md) | <p>_(Optional)_ Overrides for metrics. Let you change metric name and default labels</p><p> 1.1.0</p> |
+| [exposePerformanceMetrics?](./opossum-prometheus.circuitbreakermetricsoptions.exposeperformancemetrics.md) | boolean | _(Optional)_ Expose performance metrics <code>circuit*breaker_performance</code> for events <code>success</code> and <code>failure</code> |
+| [overrides?](./docs/opossum-prometheus.circuitbreakermetricsoptions.overrides.md) | [CircuitBreakerMetricsOptionsOverrides](./opossum-prometheus.circuitbreakermetricsoptionsoverrides.md) | *(Optional)_ Overrides for metrics. Let you change metric name and default labels |
 | [prefix?](./docs/opossum-prometheus.circuitbreakermetricsoptions.prefix.md) | string | _(Optional)_ Prefix for metrics. Will be added to the beginning of metric name if no <code>override</code> provided |
-| [registry?](./docs/opossum-prometheus.circuitbreakermetricsoptions.registry.md) | PromClient.Registry | _(Optional)_ Prometheus registry |
+| [registry?](./docs/opossum-prometheus.circuitbreakermetricsoptions.registry.md) | PromClient.Registry | _(Optional)\_ Prometheus registry |
 
 <sub>[Back to top](#toc)</sub>
 
