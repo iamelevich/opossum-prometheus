@@ -40,6 +40,8 @@ With PNPM:
 pnpm add @iamelevich/opossum-prometheus
 ```
 
+<sub>[Back to top](#toc)</sub>
+
 ## Usage
 
 ```ts
