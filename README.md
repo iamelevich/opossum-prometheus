@@ -1,7 +1,7 @@
 # opossum-prometheus
 
 [![Test](https://github.com/iamelevich/opossum-prometheus/actions/workflows/test.yml/badge.svg)](https://github.com/iamelevich/opossum-prometheus/actions/workflows/test.yml)
-[![cov](https://iamelevich.github.io/opossum-prometheus/badges/coverage.svg)](https://github.com/iamelevich/opossum-prometheus/actions)
+[![codecov](https://codecov.io/gh/iamelevich/opossum-prometheus/branch/master/graph/badge.svg?token=HPU3T9NJDR)](https://codecov.io/gh/iamelevich/opossum-prometheus)
 
 This library add [Prometheus](https://prometheus.io/) metrics to the [opossum](https://github.com/nodeshift/opossum) circuit breaker. It based on [opossum-prometheus](https://github.com/nodeshift/opossum-prometheus) with some improvements:
 
