@@ -159,6 +159,7 @@ export class CircuitBreakerMetrics {
       }
 
       // Register event listener to collect metrics
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
       circuitBreaker.on(eventName as any, (_: any, latencyMs?: number) => {
         this.counter.inc({
           [this.metricConfig.counter.labels.name]: circuitBreaker.name,
