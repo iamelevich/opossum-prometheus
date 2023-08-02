@@ -21,8 +21,8 @@ devDependencies:
     specifier: ^18.15.11
     version: 18.15.11
   '@types/opossum':
-    specifier: ^6.2.3
-    version: 6.2.3
+    specifier: ^8.0.0
+    version: 8.1.0
   ava:
     specifier: ^5.2.0
     version: 5.2.0
@@ -601,8 +601,8 @@ packages:
     resolution: {integrity: sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw==}
     dev: true
 
-  /@types/opossum@6.2.3:
-    resolution: {integrity: sha512-KcbU4O7GydLbRLZbKRdFikNHHAsQESYIPlA6HEm+CCaZfEk+/NTGlvY8g5t8pg/ks3U80oEf8a21lUAjW311Og==}
+  /@types/opossum@8.1.0:
+    resolution: {integrity: sha512-+xcQBTP7st1HZGtahEu54nbZjPyBZflTGuPegB28VVDVbvfET2UfeWJnTcl3lIyf4bZW3wvRIOqSnhz/9P+O1g==}
     dependencies:
       '@types/node': 18.15.11
     dev: true
