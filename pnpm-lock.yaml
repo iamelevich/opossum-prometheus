@@ -51,8 +51,8 @@ devDependencies:
     specifier: ^2.4.3
     version: 2.4.3(prettier@2.8.7)
   prettier-plugin-sort-json:
-    specifier: ^1.0.0
-    version: 1.0.0(prettier@2.8.7)
+    specifier: ^3.0.0
+    version: 3.0.0(prettier@2.8.7)
   prom-client:
     specifier: ^14.2.0
     version: 14.2.0
@@ -593,10 +593,6 @@ packages:
     resolution: {integrity: sha512-+xcQBTP7st1HZGtahEu54nbZjPyBZflTGuPegB28VVDVbvfET2UfeWJnTcl3lIyf4bZW3wvRIOqSnhz/9P+O1g==}
     dependencies:
       '@types/node': 18.15.11
-    dev: true
-
-  /@types/prettier@2.7.2:
-    resolution: {integrity: sha512-KufADq8uQqo1pYKVIYzfKbJfBAc0sOeXqGbFaSpv8MRmC/zXgowNZmFcbngndGk922QDmOASEXUZCaY48gs4cg==}
     dev: true
 
   /@types/semver@7.3.13:
@@ -4192,13 +4188,12 @@ packages:
       synckit: 0.8.5
     dev: true
 
-  /prettier-plugin-sort-json@1.0.0(prettier@2.8.7):
-    resolution: {integrity: sha512-XgcaF/Sojax1vD6j53wNIByx0rp7ecang+A8W0eM+Ks3yBFu/qXjJNvUtC1lEWeYbNfmRs/d8FyYJCYozAVENw==}
-    engines: {node: '>=14.0.0'}
+  /prettier-plugin-sort-json@3.0.0(prettier@2.8.7):
+    resolution: {integrity: sha512-wT9Nlduwf/Ihv75MG4FfsywVVLAhwUGAZU4SweAmyOe+OPt9MQgqCNt5VfeL3NJ7mMUKDnfT3F6vN4vbVjamxQ==}
+    engines: {node: '>=16.0.0'}
     peerDependencies:
-      prettier: ^2.3.2
+      prettier: ^3.0.0
     dependencies:
-      '@types/prettier': 2.7.2
       prettier: 2.8.7
     dev: true
 
