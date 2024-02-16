@@ -13,7 +13,7 @@ jobs:
       matrix:
         node-version: [16, 18, 20]
     runs-on: ubuntu-latest
-    name: Test Node.js ${{ matrix.node-version }} with prom-client ${{ matrix.prom-client-version }}
+    name: Test Node.js ${{ matrix.node-version }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
