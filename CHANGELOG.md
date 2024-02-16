@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.1](https://github.com/iamelevich/opossum-prometheus/compare/v1.3.0...v1.3.1) (2024-02-16)
+
+
+### Bug Fixes
+
+* update `peerDeps` to allow `prom-client` `15` ([66aa323](https://github.com/iamelevich/opossum-prometheus/commit/66aa32369b3509a84a50eec626fd46ad02e4b60c))
+
 ## [1.3.0](https://github.com/iamelevich/opossum-prometheus/compare/v1.2.0...v1.3.0) (2023-07-18)
 
 
