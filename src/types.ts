@@ -38,30 +38,17 @@ export interface CircuitBreakerMetricsOptions {
    * Prefix for metrics. Will be added to the beginning of metric name if no
    * `override` provided
    *
-   * @example
+   * Example will create metrics with name `my_service_circuit_breaker_counter`
+   * and `my_service_circuit_breaker_performance`
    *
-   * ```js
-   * {
-   *   "prefix": "my_service"
-   * }
-   * ```
-   *
-   * Will create metrics with name `my_service_circuit_breaker_counter` and
-   * `my_service_circuit_breaker_performance`
+   * @example {"prefix": "my_service"}
    */
   prefix?: string;
 
   /**
    * Custom labels
    *
-   * @example
-   *
-   * ```js
-   * {
-   *   "service": "my-service",
-   *   "version": "1.0.0"
-   * }
-   * ```
+   * @example {customLabels: { "service": "my-service", "version": "1.0.0" }}
    */
   customLabels?: Record<string, string>;
 
