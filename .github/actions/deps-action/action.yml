@@ -4,7 +4,7 @@ inputs:
   node-version: # id of input
     description: 'Nodejs version'
     required: true
-    default: '18'
+    default: '20'
   pnpm-version: # id of input
     description: 'PNPM version'
     required: true

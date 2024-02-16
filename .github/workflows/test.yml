@@ -11,9 +11,9 @@ jobs:
   test:
     strategy:
       matrix:
-        node-version: [16, 18]
+        node-version: [16, 18, 20]
     runs-on: ubuntu-latest
-    name: Test Node.js ${{ matrix.node-version }}
+    name: Test Node.js ${{ matrix.node-version }} with prom-client ${{ matrix.prom-client-version }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -41,7 +41,7 @@ jobs:
       - name: Setup Node.js, PNPM and install deps
         uses: ./.github/actions/setup-with-deps-action
         with:
-          node-version: 18
+          node-version: 20
 
       - name: Lint
         run: pnpm lint
