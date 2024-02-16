@@ -7,19 +7,19 @@ settings:
 devDependencies:
   '@commitlint/cli':
     specifier: ^18.0.0
-    version: 18.6.1(@types/node@20.11.17)(typescript@5.0.2)
+    version: 18.6.1(@types/node@20.11.19)(typescript@5.0.2)
   '@commitlint/config-conventional':
     specifier: ^18.0.0
     version: 18.6.2
   '@microsoft/api-documenter':
     specifier: ^7.21.6
-    version: 7.21.6(@types/node@20.11.17)
+    version: 7.21.6(@types/node@20.11.19)
   '@microsoft/api-extractor':
     specifier: ^7.34.4
-    version: 7.34.4(@types/node@20.11.17)
+    version: 7.34.4(@types/node@20.11.19)
   '@types/node':
-    specifier: ^20.0.0
-    version: 20.11.17
+    specifier: ^20.11.19
+    version: 20.11.19
   '@types/opossum':
     specifier: ^8.0.0
     version: 8.1.0
@@ -54,11 +54,11 @@ devDependencies:
     specifier: ^3.0.0
     version: 3.0.0(prettier@3.2.5)
   prom-client:
-    specifier: ^14.2.0
-    version: 14.2.0
+    specifier: ^15.1.0
+    version: 15.1.0
   ts-node:
     specifier: ^10.9.1
-    version: 10.9.1(@types/node@20.11.17)(typescript@5.0.2)
+    version: 10.9.1(@types/node@20.11.19)(typescript@5.0.2)
   typescript:
     specifier: ^5.0.2
     version: 5.0.2
@@ -123,7 +123,7 @@ packages:
       }
     dev: true
 
-  /@commitlint/cli@18.6.1(@types/node@20.11.17)(typescript@5.0.2):
+  /@commitlint/cli@18.6.1(@types/node@20.11.19)(typescript@5.0.2):
     resolution:
       {
         integrity: sha512-5IDE0a+lWGdkOvKH892HHAZgbAjcj1mT5QrfA/SVbLJV/BbBMGyKN0W5mhgjekPJJwEQdVNvhl9PwUacY58Usw==,
@@ -133,7 +133,7 @@ packages:
     dependencies:
       '@commitlint/format': 18.6.1
       '@commitlint/lint': 18.6.1
-      '@commitlint/load': 18.6.1(@types/node@20.11.17)(typescript@5.0.2)
+      '@commitlint/load': 18.6.1(@types/node@20.11.19)(typescript@5.0.2)
       '@commitlint/read': 18.6.1
       '@commitlint/types': 18.6.1
       execa: 5.1.1
@@ -226,7 +226,7 @@ packages:
       '@commitlint/types': 18.6.1
     dev: true
 
-  /@commitlint/load@18.6.1(@types/node@20.11.17)(typescript@5.0.2):
+  /@commitlint/load@18.6.1(@types/node@20.11.19)(typescript@5.0.2):
     resolution:
       {
         integrity: sha512-p26x8734tSXUHoAw0ERIiHyW4RaI4Bj99D8YgUlVV9SedLf8hlWAfyIFhHRIhfPngLlCe0QYOdRKYFt8gy56TA==,
@@ -239,7 +239,7 @@ packages:
       '@commitlint/types': 18.6.1
       chalk: 4.1.2
       cosmiconfig: 8.3.6(typescript@5.0.2)
-      cosmiconfig-typescript-loader: 5.0.0(@types/node@20.11.17)(cosmiconfig@8.3.6)(typescript@5.0.2)
+      cosmiconfig-typescript-loader: 5.0.0(@types/node@20.11.19)(cosmiconfig@8.3.6)(typescript@5.0.2)
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       lodash.uniq: 4.5.0
@@ -541,16 +541,16 @@ packages:
       - supports-color
     dev: true
 
-  /@microsoft/api-documenter@7.21.6(@types/node@20.11.17):
+  /@microsoft/api-documenter@7.21.6(@types/node@20.11.19):
     resolution:
       {
         integrity: sha512-Z7orii4J9nsPfiehngONhKHQJwqfHaqwr8CvhHkgeK1jf1stECBMaej/+iKw/+KzXpP9eDdJDEGCnMprxU0kjg==,
       }
     hasBin: true
     dependencies:
-      '@microsoft/api-extractor-model': 7.26.4(@types/node@20.11.17)
+      '@microsoft/api-extractor-model': 7.26.4(@types/node@20.11.19)
       '@microsoft/tsdoc': 0.14.2
-      '@rushstack/node-core-library': 3.55.2(@types/node@20.11.17)
+      '@rushstack/node-core-library': 3.55.2(@types/node@20.11.19)
       '@rushstack/ts-command-line': 4.13.2
       colors: 1.2.5
       js-yaml: 3.13.1
@@ -559,7 +559,7 @@ packages:
       - '@types/node'
     dev: true
 
-  /@microsoft/api-extractor-model@7.26.4(@types/node@20.11.17):
+  /@microsoft/api-extractor-model@7.26.4(@types/node@20.11.19):
     resolution:
       {
         integrity: sha512-PDCgCzXDo+SLY5bsfl4bS7hxaeEtnXj7XtuzEE+BtALp7B5mK/NrS2kHWU69pohgsRmEALycQdaQPXoyT2i5MQ==,
@@ -567,22 +567,22 @@ packages:
     dependencies:
       '@microsoft/tsdoc': 0.14.2
       '@microsoft/tsdoc-config': 0.16.2
-      '@rushstack/node-core-library': 3.55.2(@types/node@20.11.17)
+      '@rushstack/node-core-library': 3.55.2(@types/node@20.11.19)
     transitivePeerDependencies:
       - '@types/node'
     dev: true
 
-  /@microsoft/api-extractor@7.34.4(@types/node@20.11.17):
+  /@microsoft/api-extractor@7.34.4(@types/node@20.11.19):
     resolution:
       {
         integrity: sha512-HOdcci2nT40ejhwPC3Xja9G+WSJmWhCUKKryRfQYsmE9cD+pxmBaKBKCbuS9jUcl6bLLb4Gz+h7xEN5r0QiXnQ==,
       }
     hasBin: true
     dependencies:
-      '@microsoft/api-extractor-model': 7.26.4(@types/node@20.11.17)
+      '@microsoft/api-extractor-model': 7.26.4(@types/node@20.11.19)
       '@microsoft/tsdoc': 0.14.2
       '@microsoft/tsdoc-config': 0.16.2
-      '@rushstack/node-core-library': 3.55.2(@types/node@20.11.17)
+      '@rushstack/node-core-library': 3.55.2(@types/node@20.11.19)
       '@rushstack/rig-package': 0.3.18
       '@rushstack/ts-command-line': 4.13.2
       colors: 1.2.5
@@ -644,6 +644,14 @@ packages:
       fastq: 1.15.0
     dev: true
 
+  /@opentelemetry/api@1.7.0:
+    resolution:
+      {
+        integrity: sha512-AdY5wvN0P2vXBi3b29hxZgSFvdhdxPB9+f0B6s//P9Q8nibRWeA3cHm8UmLpio9ABigkVHJ5NMPk+Mz8VCCyrw==,
+      }
+    engines: { node: '>=8.0.0' }
+    dev: true
+
   /@pkgr/core@0.1.1:
     resolution:
       {
@@ -678,7 +686,7 @@ packages:
       picomatch: 2.3.1
     dev: true
 
-  /@rushstack/node-core-library@3.55.2(@types/node@20.11.17):
+  /@rushstack/node-core-library@3.55.2(@types/node@20.11.19):
     resolution:
       {
         integrity: sha512-SaLe/x/Q/uBVdNFK5V1xXvsVps0y7h1sN7aSJllQyFbugyOaxhNRF25bwEDnicARNEjJw0pk0lYnJQ9Kr6ev0A==,
@@ -689,7 +697,7 @@ packages:
       '@types/node':
         optional: true
     dependencies:
-      '@types/node': 20.11.17
+      '@types/node': 20.11.19
       colors: 1.2.5
       fs-extra: 7.0.1
       import-lazy: 4.0.0
@@ -868,10 +876,10 @@ packages:
       }
     dev: true
 
-  /@types/node@20.11.17:
+  /@types/node@20.11.19:
     resolution:
       {
-        integrity: sha512-QmgQZGWu1Yw9TDyAP9ZzpFJKynYNeOvwMJmaxABfieQoVoiVOS6MN1WSpqpRcbeA5+RW82kraAVxCCJg+780Qw==,
+        integrity: sha512-7xMnVEcZFu0DikYjWOlRq7NTPETrm7teqUT2WkQjrTIkEgUyyGdWsj/Zg8bEJt5TNklzbPD1X3fqfsHw3SpapQ==,
       }
     dependencies:
       undici-types: 5.26.5
@@ -890,7 +898,7 @@ packages:
         integrity: sha512-+xcQBTP7st1HZGtahEu54nbZjPyBZflTGuPegB28VVDVbvfET2UfeWJnTcl3lIyf4bZW3wvRIOqSnhz/9P+O1g==,
       }
     dependencies:
-      '@types/node': 20.11.17
+      '@types/node': 20.11.19
     dev: true
 
   /@types/semver@7.5.7:
@@ -2302,7 +2310,7 @@ packages:
       browserslist: 4.23.0
     dev: true
 
-  /cosmiconfig-typescript-loader@5.0.0(@types/node@20.11.17)(cosmiconfig@8.3.6)(typescript@5.0.2):
+  /cosmiconfig-typescript-loader@5.0.0(@types/node@20.11.19)(cosmiconfig@8.3.6)(typescript@5.0.2):
     resolution:
       {
         integrity: sha512-+8cK7jRAReYkMwMiG+bxhcNKiHJDM6bR9FD/nGBXOWdMLuYawjF5cGrtLilJ+LGd3ZjCXnJjR5DkfWPoIVlqJA==,
@@ -2313,7 +2321,7 @@ packages:
       cosmiconfig: '>=8.2'
       typescript: '>=4'
     dependencies:
-      '@types/node': 20.11.17
+      '@types/node': 20.11.19
       cosmiconfig: 8.3.6(typescript@5.0.2)
       jiti: 1.21.0
       typescript: 5.0.2
@@ -4806,7 +4814,7 @@ packages:
       }
     engines: { node: '>= 10.13.0' }
     dependencies:
-      '@types/node': 20.11.17
+      '@types/node': 20.11.19
       merge-stream: 2.0.0
       supports-color: 8.1.1
     dev: true
@@ -6441,13 +6449,14 @@ packages:
       parse-ms: 4.0.0
     dev: true
 
-  /prom-client@14.2.0:
+  /prom-client@15.1.0:
     resolution:
       {
-        integrity: sha512-sF308EhTenb/pDRPakm+WgiN+VdM/T1RaHj1x+MvAuT8UiQP8JmOEbxVqtkbfR4LrvOg5n7ic01kRBDGXjYikA==,
+        integrity: sha512-cCD7jLTqyPdjEPBo/Xk4Iu8jxjuZgZJ3e/oET3L+ZwOuap/7Cw3dH/TJSsZKs1TQLZ2IHpIlRAKw82ef06kmMw==,
       }
-    engines: { node: '>=10' }
+    engines: { node: ^16 || ^18 || >=20 }
     dependencies:
+      '@opentelemetry/api': 1.7.0
       tdigest: 0.1.2
     dev: true
 
@@ -7570,7 +7579,7 @@ packages:
       typescript: 5.0.2
     dev: true
 
-  /ts-node@10.9.1(@types/node@20.11.17)(typescript@5.0.2):
+  /ts-node@10.9.1(@types/node@20.11.19)(typescript@5.0.2):
     resolution:
       {
         integrity: sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==,
@@ -7592,7 +7601,7 @@ packages:
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.3
-      '@types/node': 20.11.17
+      '@types/node': 20.11.19
       acorn: 8.8.2
       acorn-walk: 8.2.0
       arg: 4.1.3
