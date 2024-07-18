@@ -52,7 +52,7 @@ devDependencies:
     version: 2.5.1(prettier@3.2.5)
   prettier-plugin-sort-json:
     specifier: ^3.0.0
-    version: 3.0.0(prettier@3.2.5)
+    version: 3.1.0(prettier@3.2.5)
   prom-client:
     specifier: ^15.1.0
     version: 15.1.0
@@ -4659,8 +4659,8 @@ packages:
       synckit: 0.9.1
     dev: true
 
-  /prettier-plugin-sort-json@3.0.0(prettier@3.2.5):
-    resolution: {integrity: sha512-wT9Nlduwf/Ihv75MG4FfsywVVLAhwUGAZU4SweAmyOe+OPt9MQgqCNt5VfeL3NJ7mMUKDnfT3F6vN4vbVjamxQ==}
+  /prettier-plugin-sort-json@3.1.0(prettier@3.2.5):
+    resolution: {integrity: sha512-eIDEUjwzekiVd+oKrpd0aoACBTp5zOW71wDTNy+qQ5C9Q8oqt9n9wCm4F+SeRZbXfgblh/WYIguJynImlBXrvQ==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
       prettier: ^3.0.0
