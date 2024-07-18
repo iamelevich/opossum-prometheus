@@ -55,7 +55,7 @@ devDependencies:
     version: 3.1.0(prettier@3.2.5)
   prom-client:
     specifier: ^15.1.0
-    version: 15.1.0
+    version: 15.1.3
   ts-node:
     specifier: ^10.9.1
     version: 10.9.2(@types/node@20.14.11)(typescript@5.5.3)
@@ -515,8 +515,8 @@ packages:
       fastq: 1.15.0
     dev: true
 
-  /@opentelemetry/api@1.7.0:
-    resolution: {integrity: sha512-AdY5wvN0P2vXBi3b29hxZgSFvdhdxPB9+f0B6s//P9Q8nibRWeA3cHm8UmLpio9ABigkVHJ5NMPk+Mz8VCCyrw==}
+  /@opentelemetry/api@1.9.0:
+    resolution: {integrity: sha512-3giAOQvZiH5F9bMlMiv8+GSPMeqg0dbaeo58/0SlA9sxSqZhnUtxzX9/2FzyhS9sWQf5S0GJE0AKBrFqjpeYcg==}
     engines: {node: '>=8.0.0'}
     dev: true
 
@@ -4644,11 +4644,11 @@ packages:
       parse-ms: 4.0.0
     dev: true
 
-  /prom-client@15.1.0:
-    resolution: {integrity: sha512-cCD7jLTqyPdjEPBo/Xk4Iu8jxjuZgZJ3e/oET3L+ZwOuap/7Cw3dH/TJSsZKs1TQLZ2IHpIlRAKw82ef06kmMw==}
+  /prom-client@15.1.3:
+    resolution: {integrity: sha512-6ZiOBfCywsD4k1BN9IX0uZhF+tJkV8q8llP64G5Hajs4JOeVLPCwpPVcpXy3BwYiUGgyJzsJJQeOIv7+hDSq8g==}
     engines: {node: ^16 || ^18 || >=20}
     dependencies:
-      '@opentelemetry/api': 1.7.0
+      '@opentelemetry/api': 1.9.0
       tdigest: 0.1.2
     dev: true
 
