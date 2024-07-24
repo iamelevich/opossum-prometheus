@@ -13,7 +13,7 @@ devDependencies:
     version: 19.2.2
   '@microsoft/api-documenter':
     specifier: ^7.21.6
-    version: 7.25.7(@types/node@20.14.12)
+    version: 7.25.8(@types/node@20.14.12)
   '@microsoft/api-extractor':
     specifier: ^7.34.4
     version: 7.47.2(@types/node@20.14.12)
@@ -424,8 +424,8 @@ packages:
       - supports-color
     dev: true
 
-  /@microsoft/api-documenter@7.25.7(@types/node@20.14.12):
-    resolution: {integrity: sha512-jxGFnZ8olak7q/DVPpMYKb8xvMu9ySmvdx0ltLhkaXXCfD/md5ZlJjEOMNHTnP5I1HclJ1Z8WyRilL+GmycKmw==}
+  /@microsoft/api-documenter@7.25.8(@types/node@20.14.12):
+    resolution: {integrity: sha512-/HcMK5g4Q9oGoe8sTC23gnFBpTCJv7aj6POeLmlnK9GzdPjDgT+0WkXU51SIoZY2863LByW0pKJ09IekVMNUdw==}
     hasBin: true
     dependencies:
       '@microsoft/api-extractor-model': 7.29.3(@types/node@20.14.12)
@@ -722,7 +722,7 @@ packages:
       graphemer: 1.4.0
       ignore: 5.2.4
       natural-compare: 1.4.0
-      semver: 7.6.3
+      semver: 7.6.0
       ts-api-utils: 1.0.1(typescript@5.5.4)
       typescript: 5.5.4
     transitivePeerDependencies:
@@ -798,7 +798,7 @@ packages:
       globby: 11.1.0
       is-glob: 4.0.3
       minimatch: 9.0.3
-      semver: 7.6.3
+      semver: 7.6.0
       ts-api-utils: 1.0.1(typescript@5.5.4)
       typescript: 5.5.4
     transitivePeerDependencies:
@@ -818,7 +818,7 @@ packages:
       '@typescript-eslint/types': 6.21.0
       '@typescript-eslint/typescript-estree': 6.21.0(typescript@5.5.4)
       eslint: 8.56.0
-      semver: 7.6.3
+      semver: 7.6.0
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -1382,7 +1382,7 @@ packages:
   /builtins@5.0.1:
     resolution: {integrity: sha512-qwVpFEHNfhYJIzNRBvd2C1kyo6jz3ZSMPyyuR47OPdiKWlbYnZNyDWuyR175qDnAJLiCo5fBBqPb3RiXgWlkOQ==}
     dependencies:
-      semver: 7.6.3
+      semver: 7.6.0
     dev: true
 
   /c8@10.1.2:
@@ -1980,7 +1980,7 @@ packages:
       has-property-descriptors: 1.0.2
       has-proto: 1.0.1
       has-symbols: 1.0.3
-      hasown: 2.0.1
+      hasown: 2.0.2
       internal-slot: 1.0.7
       is-array-buffer: 3.0.4
       is-callable: 1.2.7
@@ -2033,7 +2033,7 @@ packages:
     dependencies:
       get-intrinsic: 1.2.4
       has-tostringtag: 1.0.0
-      hasown: 2.0.1
+      hasown: 2.0.2
     dev: true
 
   /es-shim-unscopables@1.0.0:
@@ -2045,7 +2045,7 @@ packages:
   /es-shim-unscopables@1.0.2:
     resolution: {integrity: sha512-J3yBRXCzDu4ULnQwxyToo/OjdMx6akgVC7K6few0a7F/0wLtmKKN7I73AH5T2836UuXRqN7Qg+IIUw/+YJksRw==}
     dependencies:
-      hasown: 2.0.1
+      hasown: 2.0.2
     dev: true
 
   /es-to-primitive@1.2.1:
@@ -2166,9 +2166,9 @@ packages:
       enhanced-resolve: 0.9.1
       eslint-plugin-import: 2.29.1(@typescript-eslint/parser@6.21.0)(eslint-import-resolver-webpack@0.13.8)(eslint@8.56.0)
       find-root: 1.1.0
-      hasown: 2.0.1
+      hasown: 2.0.2
       interpret: 1.4.0
-      is-core-module: 2.13.1
+      is-core-module: 2.15.0
       is-regex: 1.1.4
       lodash: 4.17.21
       resolve: 2.0.0-next.5
@@ -2268,8 +2268,8 @@ packages:
       eslint: 8.56.0
       eslint-import-resolver-node: 0.3.9
       eslint-module-utils: 2.8.0(@typescript-eslint/parser@6.21.0)(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-webpack@0.13.8)(eslint@8.56.0)
-      hasown: 2.0.1
-      is-core-module: 2.13.1
+      hasown: 2.0.2
+      is-core-module: 2.15.0
       is-glob: 4.0.3
       minimatch: 3.1.2
       object.fromentries: 2.0.7
@@ -2297,10 +2297,10 @@ packages:
       globals: 13.24.0
       ignore: 5.2.4
       is-builtin-module: 3.2.1
-      is-core-module: 2.12.1
+      is-core-module: 2.15.0
       minimatch: 3.1.2
       resolve: 1.22.8
-      semver: 7.6.3
+      semver: 7.6.0
     dev: true
 
   /eslint-plugin-no-use-extend-native@0.5.0:
@@ -2355,7 +2355,7 @@ packages:
       read-pkg-up: 7.0.1
       regexp-tree: 0.1.27
       regjsparser: 0.10.0
-      semver: 7.6.3
+      semver: 7.6.0
       strip-indent: 3.0.0
     transitivePeerDependencies:
       - supports-color
@@ -2783,7 +2783,7 @@ packages:
       function-bind: 1.1.2
       has-proto: 1.0.1
       has-symbols: 1.0.3
-      hasown: 2.0.1
+      hasown: 2.0.2
     dev: true
 
   /get-set-props@0.1.0:
@@ -3031,13 +3031,6 @@ packages:
       function-bind: 1.1.2
     dev: true
 
-  /hasown@2.0.1:
-    resolution: {integrity: sha512-1/th4MHjnwncwXsIW6QMzlvYL9kG5e/CpVvLRZe4XPa8TOUNbCELqmvhDmnkNsAjwaG4+I8gJJL0JBvTTLO9qA==}
-    engines: {node: '>= 0.4'}
-    dependencies:
-      function-bind: 1.1.2
-    dev: true
-
   /hasown@2.0.2:
     resolution: {integrity: sha512-0hJU9SCPvmMzIBdZFqNPXWa6dqh7WdH0cII9y+CyS8rG3nL48Bclra9HmKhVVUHyPWNH5Y7xDwAB7bfgSjkUMQ==}
     engines: {node: '>= 0.4'}
@@ -3166,7 +3159,7 @@ packages:
     engines: {node: '>= 0.4'}
     dependencies:
       es-errors: 1.3.0
-      hasown: 2.0.1
+      hasown: 2.0.2
       side-channel: 1.0.4
     dev: true
 
@@ -3224,18 +3217,6 @@ packages:
   /is-callable@1.2.7:
     resolution: {integrity: sha512-1BC0BVFhS/p0qtw6enp8e+8OD0UrK0oFLztSjNzhcKA3WDuJxxAPXzPuPtKkjEY9UUoEWlX/8fgKeu2S8i9JTA==}
     engines: {node: '>= 0.4'}
-    dev: true
-
-  /is-core-module@2.12.1:
-    resolution: {integrity: sha512-Q4ZuBAe2FUsKtyQJoQHlvP8OvBERxO3jEmy1I7hcRXcJBGGHFh/aJBswbXuS9sgrDH2QUO8ilkwNPHvHMd8clg==}
-    dependencies:
-      has: 1.0.3
-    dev: true
-
-  /is-core-module@2.13.1:
-    resolution: {integrity: sha512-hHrIjvZsftOsvKSn2TRYl63zvxsgE0K+0mYMoH6gD4omR5IWB2KynivBQczo3+wF1cCkjzvptnI9Q0sPU66ilw==}
-    dependencies:
-      hasown: 2.0.1
     dev: true
 
   /is-core-module@2.15.0:
