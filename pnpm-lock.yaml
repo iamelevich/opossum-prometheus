@@ -37,7 +37,7 @@ devDependencies:
     version: 15.2.10
   opossum:
     specifier: ^8.0.0
-    version: 8.1.4
+    version: 8.2.0
   prettier:
     specifier: ^3.0.0
     version: 3.3.3
@@ -4256,8 +4256,8 @@ packages:
       is-wsl: 2.2.0
     dev: true
 
-  /opossum@8.1.4:
-    resolution: {integrity: sha512-ktDDCD2MKX7yx8ZLtt57JrUE0IyYJthmTyXtaF4dEdPYHvX0kkWRiKkQkhEjtZnTNN5y1ErMriKNqOLqgpYXtQ==}
+  /opossum@8.2.0:
+    resolution: {integrity: sha512-MvASIfun0QsIMjTIjeQVashDKXV0BF4ezPk+ycw4Bozf0dTi4Wanvv6KMZ97CKxgKEa1usiY03mEV3OCkldMHQ==}
     engines: {node: ^22 || ^21 || ^20 || ^18 || ^16}
     dev: true
 
