@@ -13,7 +13,7 @@ devDependencies:
     version: 19.6.0
   '@microsoft/api-documenter':
     specifier: ^7.21.6
-    version: 7.26.2(@types/node@22.10.2)
+    version: 7.26.3(@types/node@22.10.2)
   '@microsoft/api-extractor':
     specifier: ^7.34.4
     version: 7.48.0(@types/node@22.10.2)
@@ -417,17 +417,17 @@ packages:
       - supports-color
     dev: true
 
-  /@microsoft/api-documenter@7.26.2(@types/node@22.10.2):
-    resolution: {integrity: sha512-NLKxqMiRN9j7AnCqrNOzRvQMRNQ97Trx9sjLLIh/REgEA2dJrAGRQ390BbVn0+5bnI29F/esvdzca/2cFikTAg==}
+  /@microsoft/api-documenter@7.26.3(@types/node@22.10.2):
+    resolution: {integrity: sha512-98ltzhUxFsEKJov4DQxSwZulu8Wb4DApp+ULE9x8JZqG5qdeSukZCSO9kAlLsL/24f6m42MQbgWcCCHuB1LrbQ==}
     hasBin: true
     dependencies:
-      '@microsoft/api-extractor-model': 7.30.0(@types/node@22.10.2)
+      '@microsoft/api-extractor-model': 7.30.1(@types/node@22.10.2)
       '@microsoft/tsdoc': 0.15.1
-      '@rushstack/node-core-library': 5.10.0(@types/node@22.10.2)
-      '@rushstack/terminal': 0.14.3(@types/node@22.10.2)
-      '@rushstack/ts-command-line': 4.23.1(@types/node@22.10.2)
+      '@rushstack/node-core-library': 5.10.1(@types/node@22.10.2)
+      '@rushstack/terminal': 0.14.4(@types/node@22.10.2)
+      '@rushstack/ts-command-line': 4.23.2(@types/node@22.10.2)
       js-yaml: 3.13.1
-      resolve: 1.22.8
+      resolve: 1.22.9
     transitivePeerDependencies:
       - '@types/node'
     dev: true
@@ -438,6 +438,16 @@ packages:
       '@microsoft/tsdoc': 0.15.1
       '@microsoft/tsdoc-config': 0.17.1
       '@rushstack/node-core-library': 5.10.0(@types/node@22.10.2)
+    transitivePeerDependencies:
+      - '@types/node'
+    dev: true
+
+  /@microsoft/api-extractor-model@7.30.1(@types/node@22.10.2):
+    resolution: {integrity: sha512-CTS2PlASJHxVY8hqHORVb1HdECWOEMcMnM6/kDkPr0RZapAFSIHhg9D4jxuE8g+OWYHtPc10LCpmde5pylTRlA==}
+    dependencies:
+      '@microsoft/tsdoc': 0.15.1
+      '@microsoft/tsdoc-config': 0.17.1
+      '@rushstack/node-core-library': 5.10.1(@types/node@22.10.2)
     transitivePeerDependencies:
       - '@types/node'
     dev: true
@@ -541,6 +551,25 @@ packages:
       semver: 7.5.4
     dev: true
 
+  /@rushstack/node-core-library@5.10.1(@types/node@22.10.2):
+    resolution: {integrity: sha512-BSb/KcyBHmUQwINrgtzo6jiH0HlGFmrUy33vO6unmceuVKTEyL2q+P0fQq2oB5hvXVWOEUhxB2QvlkZluvUEmg==}
+    peerDependencies:
+      '@types/node': '*'
+    peerDependenciesMeta:
+      '@types/node':
+        optional: true
+    dependencies:
+      '@types/node': 22.10.2
+      ajv: 8.13.0
+      ajv-draft-04: 1.0.0(ajv@8.13.0)
+      ajv-formats: 3.0.1(ajv@8.13.0)
+      fs-extra: 7.0.1
+      import-lazy: 4.0.0
+      jju: 1.4.0
+      resolve: 1.22.9
+      semver: 7.5.4
+    dev: true
+
   /@rushstack/rig-package@0.5.3:
     resolution: {integrity: sha512-olzSSjYrvCNxUFZowevC3uz8gvKr3WTpHQ7BkpjtRpA3wK+T0ybep/SRUMfr195gBzJm5gaXw0ZMgjIyHqJUow==}
     dependencies:
@@ -561,10 +590,34 @@ packages:
       supports-color: 8.1.1
     dev: true
 
+  /@rushstack/terminal@0.14.4(@types/node@22.10.2):
+    resolution: {integrity: sha512-NxACqERW0PHq8Rpq1V6v5iTHEwkRGxenjEW+VWqRYQ8T9puUzgmGHmEZUaUEDHAe9Qyvp0/Ew04sAiQw9XjhJg==}
+    peerDependencies:
+      '@types/node': '*'
+    peerDependenciesMeta:
+      '@types/node':
+        optional: true
+    dependencies:
+      '@rushstack/node-core-library': 5.10.1(@types/node@22.10.2)
+      '@types/node': 22.10.2
+      supports-color: 8.1.1
+    dev: true
+
   /@rushstack/ts-command-line@4.23.1(@types/node@22.10.2):
     resolution: {integrity: sha512-40jTmYoiu/xlIpkkRsVfENtBq4CW3R4azbL0Vmda+fMwHWqss6wwf/Cy/UJmMqIzpfYc2OTnjYP1ZLD3CmyeCA==}
     dependencies:
       '@rushstack/terminal': 0.14.3(@types/node@22.10.2)
+      '@types/argparse': 1.0.38
+      argparse: 1.0.10
+      string-argv: 0.3.2
+    transitivePeerDependencies:
+      - '@types/node'
+    dev: true
+
+  /@rushstack/ts-command-line@4.23.2(@types/node@22.10.2):
+    resolution: {integrity: sha512-JJ7XZX5K3ThBBva38aomgsPv1L7FV6XmSOcR6HtM7HDFZJkepqT65imw26h9ggGqMjsY0R9jcl30tzKcVj9aOQ==}
+    dependencies:
+      '@rushstack/terminal': 0.14.4(@types/node@22.10.2)
       '@types/argparse': 1.0.38
       argparse: 1.0.10
       string-argv: 0.3.2
@@ -2113,8 +2166,8 @@ packages:
     resolution: {integrity: sha512-WFj2isz22JahUv+B788TlO3N6zL3nNJGU8CcZbPZvVEkBPaJdCV4vy5wyghty5ROFbCRnm132v8BScu5/1BQ8g==}
     dependencies:
       debug: 3.2.7
-      is-core-module: 2.15.1
-      resolve: 1.22.8
+      is-core-module: 2.16.0
+      resolve: 1.22.9
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -2133,7 +2186,7 @@ packages:
       find-root: 1.1.0
       hasown: 2.0.2
       interpret: 1.4.0
-      is-core-module: 2.15.1
+      is-core-module: 2.16.0
       is-regex: 1.1.4
       lodash: 4.17.21
       resolve: 2.0.0-next.5
@@ -2234,7 +2287,7 @@ packages:
       eslint-import-resolver-node: 0.3.9
       eslint-module-utils: 2.8.0(@typescript-eslint/parser@6.21.0)(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-webpack@0.13.8)(eslint@8.56.0)
       hasown: 2.0.2
-      is-core-module: 2.15.1
+      is-core-module: 2.16.0
       is-glob: 4.0.3
       minimatch: 3.1.2
       object.fromentries: 2.0.7
@@ -2262,9 +2315,9 @@ packages:
       globals: 13.24.0
       ignore: 5.3.2
       is-builtin-module: 3.2.1
-      is-core-module: 2.15.1
+      is-core-module: 2.16.0
       minimatch: 3.1.2
-      resolve: 1.22.8
+      resolve: 1.22.9
       semver: 7.6.0
     dev: true
 
@@ -3161,8 +3214,8 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /is-core-module@2.15.1:
-    resolution: {integrity: sha512-z0vtXSwucUJtANQWldhbtbt7BnL0vxiFjIdDLAatwhDYty2bad6s+rijD6Ri4YuYJubLzIJLUidCh09e1djEVQ==}
+  /is-core-module@2.16.0:
+    resolution: {integrity: sha512-urTSINYfAYgcbLb0yDQ6egFm6h3Mo1DcF9EkyXSRjjzdHbsulg01qhwWuXdOoUBuTkbQ80KDboXa0vFJ+BDH+g==}
     engines: {node: '>= 0.4'}
     dependencies:
       hasown: 2.0.2
@@ -4105,7 +4158,7 @@ packages:
     resolution: {integrity: sha512-/5CMN3T0R4XTj4DcGaexo+roZSdSFW/0AOOTROrjxzCG1wrWXEsGbRKevjlIL+ZDE4sZlJr5ED4YW0yqmkK+eA==}
     dependencies:
       hosted-git-info: 2.8.9
-      resolve: 1.22.8
+      resolve: 1.22.9
       semver: 5.7.2
       validate-npm-package-license: 3.0.4
     dev: true
@@ -4621,7 +4674,16 @@ packages:
     resolution: {integrity: sha512-oKWePCxqpd6FlLvGV1VU0x7bkPmmCNolxzjMf4NczoDnQcIWrAF+cPtZn5i6n+RfD2d9i0tzpKnG6Yk168yIyw==}
     hasBin: true
     dependencies:
-      is-core-module: 2.15.1
+      is-core-module: 2.16.0
+      path-parse: 1.0.7
+      supports-preserve-symlinks-flag: 1.0.0
+    dev: true
+
+  /resolve@1.22.9:
+    resolution: {integrity: sha512-QxrmX1DzraFIi9PxdG5VkRfRwIgjwyud+z/iBwfRRrVmHc+P9Q7u2lSSpQ6bjr2gy5lrqIiU9vb6iAeGf2400A==}
+    hasBin: true
+    dependencies:
+      is-core-module: 2.16.0
       path-parse: 1.0.7
       supports-preserve-symlinks-flag: 1.0.0
     dev: true
@@ -4630,7 +4692,7 @@ packages:
     resolution: {integrity: sha512-U7WjGVG9sH8tvjW5SmGbQuui75FiyjAX72HX15DwBBwF9dNiQZRQAg9nnPhYy+TUnE0+VcrttuvNI8oSxZcocA==}
     hasBin: true
     dependencies:
-      is-core-module: 2.15.1
+      is-core-module: 2.16.0
       path-parse: 1.0.7
       supports-preserve-symlinks-flag: 1.0.0
     dev: true
