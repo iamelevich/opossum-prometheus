@@ -13,7 +13,7 @@ devDependencies:
     version: 19.6.0
   '@microsoft/api-documenter':
     specifier: ^7.21.6
-    version: 7.26.3(@types/node@22.10.5)
+    version: 7.26.4(@types/node@22.10.5)
   '@microsoft/api-extractor':
     specifier: ^7.34.4
     version: 7.48.1(@types/node@22.10.5)
@@ -417,8 +417,8 @@ packages:
       - supports-color
     dev: true
 
-  /@microsoft/api-documenter@7.26.3(@types/node@22.10.5):
-    resolution: {integrity: sha512-98ltzhUxFsEKJov4DQxSwZulu8Wb4DApp+ULE9x8JZqG5qdeSukZCSO9kAlLsL/24f6m42MQbgWcCCHuB1LrbQ==}
+  /@microsoft/api-documenter@7.26.4(@types/node@22.10.5):
+    resolution: {integrity: sha512-SoP9QlAPbhAbGDWltGovAPAD1sbvdD9OMWZHLg+ERu1+igwecCGbQuJ9vvenHSvw6XdKLRobOfcLrtxMPmFFGQ==}
     hasBin: true
     dependencies:
       '@microsoft/api-extractor-model': 7.30.1(@types/node@22.10.5)
@@ -427,7 +427,7 @@ packages:
       '@rushstack/terminal': 0.14.4(@types/node@22.10.5)
       '@rushstack/ts-command-line': 4.23.2(@types/node@22.10.5)
       js-yaml: 3.13.1
-      resolve: 1.22.9
+      resolve: 1.22.10
     transitivePeerDependencies:
       - '@types/node'
     dev: true
@@ -537,7 +537,7 @@ packages:
       fs-extra: 7.0.1
       import-lazy: 4.0.0
       jju: 1.4.0
-      resolve: 1.22.9
+      resolve: 1.22.10
       semver: 7.5.4
     dev: true
 
@@ -2118,8 +2118,8 @@ packages:
     resolution: {integrity: sha512-WFj2isz22JahUv+B788TlO3N6zL3nNJGU8CcZbPZvVEkBPaJdCV4vy5wyghty5ROFbCRnm132v8BScu5/1BQ8g==}
     dependencies:
       debug: 3.2.7
-      is-core-module: 2.16.0
-      resolve: 1.22.9
+      is-core-module: 2.16.1
+      resolve: 1.22.10
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -2138,7 +2138,7 @@ packages:
       find-root: 1.1.0
       hasown: 2.0.2
       interpret: 1.4.0
-      is-core-module: 2.16.0
+      is-core-module: 2.16.1
       is-regex: 1.1.4
       lodash: 4.17.21
       resolve: 2.0.0-next.5
@@ -2239,7 +2239,7 @@ packages:
       eslint-import-resolver-node: 0.3.9
       eslint-module-utils: 2.8.0(@typescript-eslint/parser@6.21.0)(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-webpack@0.13.8)(eslint@8.56.0)
       hasown: 2.0.2
-      is-core-module: 2.16.0
+      is-core-module: 2.16.1
       is-glob: 4.0.3
       minimatch: 3.1.2
       object.fromentries: 2.0.7
@@ -2267,9 +2267,9 @@ packages:
       globals: 13.24.0
       ignore: 5.3.2
       is-builtin-module: 3.2.1
-      is-core-module: 2.16.0
+      is-core-module: 2.16.1
       minimatch: 3.1.2
-      resolve: 1.22.9
+      resolve: 1.22.10
       semver: 7.6.0
     dev: true
 
@@ -3166,8 +3166,8 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /is-core-module@2.16.0:
-    resolution: {integrity: sha512-urTSINYfAYgcbLb0yDQ6egFm6h3Mo1DcF9EkyXSRjjzdHbsulg01qhwWuXdOoUBuTkbQ80KDboXa0vFJ+BDH+g==}
+  /is-core-module@2.16.1:
+    resolution: {integrity: sha512-UfoeMA6fIJ8wTYFEUjelnaGI67v6+N7qXJEvQuIGa99l4xsCruSYOVSQ0uPANn4dAzm8lkYPaKLrrijLq7x23w==}
     engines: {node: '>= 0.4'}
     dependencies:
       hasown: 2.0.2
@@ -4110,7 +4110,7 @@ packages:
     resolution: {integrity: sha512-/5CMN3T0R4XTj4DcGaexo+roZSdSFW/0AOOTROrjxzCG1wrWXEsGbRKevjlIL+ZDE4sZlJr5ED4YW0yqmkK+eA==}
     dependencies:
       hosted-git-info: 2.8.9
-      resolve: 1.22.9
+      resolve: 1.22.10
       semver: 5.7.2
       validate-npm-package-license: 3.0.4
     dev: true
@@ -4622,11 +4622,21 @@ packages:
     resolution: {integrity: sha512-seS2Tj26TBVOC2NIc2rOe2y2ZO7efxITtLZcGSOnHHNOQ7CkiUBfw0Iw2ck6xkIhPwLhKNLS8BO+hEpngQlqzw==}
     dev: true
 
+  /resolve@1.22.10:
+    resolution: {integrity: sha512-NPRy+/ncIMeDlTAsuqwKIiferiawhefFJtkNSW0qZJEqMEb+qBt/77B/jGeeek+F0uOeN05CDa6HXbbIgtVX4w==}
+    engines: {node: '>= 0.4'}
+    hasBin: true
+    dependencies:
+      is-core-module: 2.16.1
+      path-parse: 1.0.7
+      supports-preserve-symlinks-flag: 1.0.0
+    dev: true
+
   /resolve@1.22.9:
     resolution: {integrity: sha512-QxrmX1DzraFIi9PxdG5VkRfRwIgjwyud+z/iBwfRRrVmHc+P9Q7u2lSSpQ6bjr2gy5lrqIiU9vb6iAeGf2400A==}
     hasBin: true
     dependencies:
-      is-core-module: 2.16.0
+      is-core-module: 2.16.1
       path-parse: 1.0.7
       supports-preserve-symlinks-flag: 1.0.0
     dev: true
@@ -4635,7 +4645,7 @@ packages:
     resolution: {integrity: sha512-U7WjGVG9sH8tvjW5SmGbQuui75FiyjAX72HX15DwBBwF9dNiQZRQAg9nnPhYy+TUnE0+VcrttuvNI8oSxZcocA==}
     hasBin: true
     dependencies:
-      is-core-module: 2.16.0
+      is-core-module: 2.16.1
       path-parse: 1.0.7
       supports-preserve-symlinks-flag: 1.0.0
     dev: true
