@@ -32,7 +32,7 @@ jobs:
       # Setup .npmrc file to publish to GitHub Packages
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           registry-url: 'https://npm.pkg.github.com'
           # Defaults to the user or organization that owns the workflow file
           scope: '@iamelevich'
@@ -40,7 +40,7 @@ jobs:
       - name: Setup PNPM and install deps
         uses: ./.github/actions/deps-action
         with:
-          node-version: 20
+          node-version: 22
 
       - name: Build project
         run: pnpm build
@@ -61,13 +61,13 @@ jobs:
       # Setup .npmrc file to publish to NPM
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           registry-url: 'https://registry.npmjs.org'
 
       - name: Setup PNPM and install deps
         uses: ./.github/actions/deps-action
         with:
-          node-version: 20
+          node-version: 22
 
       - name: Build project
         run: pnpm build

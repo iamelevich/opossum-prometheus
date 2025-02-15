@@ -11,7 +11,7 @@ jobs:
   test:
     strategy:
       matrix:
-        node-version: [16, 18, 20]
+        node-version: [16, 18, 20, 22]
     runs-on: ubuntu-latest
     name: Test Node.js ${{ matrix.node-version }}
     steps:
@@ -38,10 +38,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node.js, PNPM and install deps
-        uses: ./.github/actions/setup-with-deps-action
+      - name: Setup Biome
+        uses: biomejs/setup-biome@v2
         with:
-          node-version: 20
+          version: latest
 
-      - name: Lint
-        run: pnpm lint
+      - name: Run Biome
+        run: biome ci .
