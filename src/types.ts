@@ -7,67 +7,67 @@ import type PromClient from 'prom-client';
  * @public
  */
 export interface CircuitBreakerMetricsOptions {
-  /**
-   * If disabled - will not collect metrics
-   *
-   * @defaultValue `true`
-   */
-  enabled?: boolean;
+	/**
+	 * If disabled - will not collect metrics
+	 *
+	 * @defaultValue `true`
+	 */
+	enabled?: boolean;
 
-  /**
-   * Prometheus client
-   *
-   * @example <caption>ES6</caption>
-   *
-   * @example <caption>CommonJS</caption>
-   *
-   * ```js
-   * const client = require('prom-client');
-   * ```
-   */
-  client: typeof PromClient;
+	/**
+	 * Prometheus client
+	 *
+	 * @example <caption>ES6</caption>
+	 *
+	 * @example <caption>CommonJS</caption>
+	 *
+	 * ```js
+	 * const client = require('prom-client');
+	 * ```
+	 */
+	client: typeof PromClient;
 
-  /**
-   * Prometheus registry
-   *
-   * @defaultValue `client.register`
-   */
-  registry?: PromClient.Registry;
+	/**
+	 * Prometheus registry
+	 *
+	 * @defaultValue `client.register`
+	 */
+	registry?: PromClient.Registry;
 
-  /**
-   * Prefix for metrics. Will be added to the beginning of metric name if no
-   * `override` provided
-   *
-   * Example will create metrics with name `my_service_circuit_breaker_counter`
-   * and `my_service_circuit_breaker_performance`
-   *
-   * @example {"prefix": "my_service"}
-   */
-  prefix?: string;
+	/**
+	 * Prefix for metrics. Will be added to the beginning of metric name if no
+	 * `override` provided
+	 *
+	 * Example will create metrics with name `my_service_circuit_breaker_counter`
+	 * and `my_service_circuit_breaker_performance`
+	 *
+	 * @example {"prefix": "my_service"}
+	 */
+	prefix?: string;
 
-  /**
-   * Custom labels
-   *
-   * @example {customLabels: { "service": "my-service", "version": "1.0.0" }}
-   */
-  customLabels?: Record<string, string>;
+	/**
+	 * Custom labels
+	 *
+	 * @example {customLabels: { "service": "my-service", "version": "1.0.0" }}
+	 */
+	customLabels?: Record<string, string>;
 
-  /** List of opossum circuit breaker events to ignore */
-  eventsBlacklist?: string[];
+	/** List of opossum circuit breaker events to ignore */
+	eventsBlacklist?: string[];
 
-  /** List of circuit breakers to collect metrics for */
-  circuitBreakers?: CircuitBreaker[];
+	/** List of circuit breakers to collect metrics for */
+	circuitBreakers?: CircuitBreaker[];
 
-  /** Overrides for metrics. Let you change metric name and default labels */
-  overrides?: CircuitBreakerMetricsOptionsOverrides;
+	/** Overrides for metrics. Let you change metric name and default labels */
+	overrides?: CircuitBreakerMetricsOptionsOverrides;
 
-  /**
-   * Expose performance metrics `circuit_breaker_performance` for events
-   * `success` and `failure`
-   *
-   * @defaultValue `true`
-   */
-  exposePerformanceMetrics?: boolean;
+	/**
+	 * Expose performance metrics `circuit_breaker_performance` for events
+	 * `success` and `failure`
+	 *
+	 * @defaultValue `true`
+	 */
+	exposePerformanceMetrics?: boolean;
 }
 
 /**
@@ -76,11 +76,11 @@ export interface CircuitBreakerMetricsOptions {
  * @public
  */
 export interface CircuitBreakerMetricsOptionsOverrides {
-  /** Overrides for counter metric */
-  counter?: CircuitBreakerMetricsOptionsOverridesMetric;
+	/** Overrides for counter metric */
+	counter?: CircuitBreakerMetricsOptionsOverridesMetric;
 
-  /** Overrides for summary metric */
-  summary?: CircuitBreakerMetricsOptionsOverridesMetric;
+	/** Overrides for summary metric */
+	summary?: CircuitBreakerMetricsOptionsOverridesMetric;
 }
 
 /**
@@ -89,15 +89,15 @@ export interface CircuitBreakerMetricsOptionsOverrides {
  * @public
  */
 export interface CircuitBreakerMetricsOptionsOverridesMetric {
-  /**
-   * Metric name override
-   *
-   * @defaultValue `circuit_breaker_counter` for counter or `circuit_breaker_performance` for summary
-   */
-  name?: string;
+	/**
+	 * Metric name override
+	 *
+	 * @defaultValue `circuit_breaker_counter` for counter or `circuit_breaker_performance` for summary
+	 */
+	name?: string;
 
-  /** Metric default labels overrides */
-  labels?: CircuitBreakerMetricsOptionsOverridesMetricLabels;
+	/** Metric default labels overrides */
+	labels?: CircuitBreakerMetricsOptionsOverridesMetricLabels;
 }
 
 /**
@@ -106,33 +106,33 @@ export interface CircuitBreakerMetricsOptionsOverridesMetric {
  * @public
  */
 export interface CircuitBreakerMetricsOptionsOverridesMetricLabels {
-  /**
-   * Name label override
-   *
-   * @defaultValue `name`
-   */
-  name?: string;
+	/**
+	 * Name label override
+	 *
+	 * @defaultValue `name`
+	 */
+	name?: string;
 
-  /**
-   * Event label override
-   *
-   * @defaultValue `event`
-   */
-  event?: string;
+	/**
+	 * Event label override
+	 *
+	 * @defaultValue `event`
+	 */
+	event?: string;
 }
 
 export type CircuitBreakerEvent =
-  | 'halfOpen'
-  | 'close'
-  | 'open'
-  | 'shutdown'
-  | 'fire'
-  | 'cacheHit'
-  | 'cacheMiss'
-  | 'reject'
-  | 'timeout'
-  | 'success'
-  | 'semaphoreLocked'
-  | 'healthCheckFailed'
-  | 'fallback'
-  | 'failure';
+	| 'halfOpen'
+	| 'close'
+	| 'open'
+	| 'shutdown'
+	| 'fire'
+	| 'cacheHit'
+	| 'cacheMiss'
+	| 'reject'
+	| 'timeout'
+	| 'success'
+	| 'semaphoreLocked'
+	| 'healthCheckFailed'
+	| 'fallback'
+	| 'failure';
