@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.3.2 (2025-02-15)
+
+
+### Continuous Integration
+
+* add Node 22 support ([a852dc5](https://github.com/iamelevich/opossum-prometheus/commit/a852dc553f138d331d111a265113efceb4f2c810))
+* drop node 14 testing ([bf4695b](https://github.com/iamelevich/opossum-prometheus/commit/bf4695be145f53d23b67f567f9e028bb77c97f36))
+
 ## [1.3.1](https://github.com/iamelevich/opossum-prometheus/compare/v1.3.0...v1.3.1) (2024-02-16)
 
 
