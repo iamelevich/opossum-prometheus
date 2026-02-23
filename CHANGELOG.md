@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.0.0](https://github.com/iamelevich/opossum-prometheus/compare/v1.3.2...v2.0.0) (2026-02-23)
+
+
+### ⚠ BREAKING CHANGES
+
+* drop node 16 and 18. Add node 24 support
+
+### Features
+
+* drop node 16 and 18. Add node 24 support ([35e3bf1](https://github.com/iamelevich/opossum-prometheus/commit/35e3bf11411777a7e11af78e4c0b03740cd68419))
+
 ## 1.3.2 (2025-02-15)
 
 
