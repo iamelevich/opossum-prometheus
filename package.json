@@ -62,14 +62,14 @@
     "ava": "^6.0.0",
     "c8": "^10.0.0",
     "lefthook": "^2.0.0",
-    "opossum": "^8.0.0",
+    "opossum": "^9.0.0",
     "prom-client": "^15.1.0",
     "ts-node": "^10.9.1",
     "typescript": "^5.0.2",
     "webpack": "^5.77.0"
   },
   "peerDependencies": {
-    "opossum": "7.x || 8.x",
+    "opossum": "7.x || 8.x || 9.x",
     "prom-client": "14.x || 15.x"
   },
   "pnpm": {
