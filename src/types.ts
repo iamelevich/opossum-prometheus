@@ -120,19 +120,3 @@ export interface CircuitBreakerMetricsOptionsOverridesMetricLabels {
    */
   event?: string;
 }
-
-export type CircuitBreakerEvent =
-  | 'halfOpen'
-  | 'close'
-  | 'open'
-  | 'shutdown'
-  | 'fire'
-  | 'cacheHit'
-  | 'cacheMiss'
-  | 'reject'
-  | 'timeout'
-  | 'success'
-  | 'semaphoreLocked'
-  | 'healthCheckFailed'
-  | 'fallback'
-  | 'failure';
