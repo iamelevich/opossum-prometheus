@@ -59,7 +59,7 @@
     "@microsoft/api-extractor": "^7.34.4",
     "@types/node": "^24.0.0",
     "@types/opossum": "^8.0.0",
-    "ava": "^6.0.0",
+    "ava": "^7.0.0",
     "c8": "^11.0.0",
     "lefthook": "^2.0.0",
     "opossum": "^9.0.0",
